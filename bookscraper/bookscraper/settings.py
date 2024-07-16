@@ -15,6 +15,10 @@ NEWSPIDER_MODULE = "bookscraper.spiders"
 # FEEDS = {'booksdata.json': {'format': 'json'}}
 
 
+# ROTATING_PROXY_LIST = ['104.36.7.201:1337', '181.143.69.227:5678', '60.191.137.252:1080']
+
+# PROXY_LIST_PATH = "Path to Proxy file"
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscraper (+http://www.yourdomain.com)"
 
@@ -54,7 +58,9 @@ COOKIES_ENABLED = False
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    # "bookscraper.middlewares.BookscraperDownloaderMiddleware": 543,
-   "bookscraper.middlewares.BookSpiderUserAgentMiddleWare":300
+   "bookscraper.middlewares.BookSpiderUserAgentMiddleWare":300,
+#    "rotating_proxies.middlewares.RotatingProxyMiddleware":600,
+#    "rotating_proxies.middlewares.BanDetectionMiddleware":610,
 }
 
 # Enable or disable extensions
